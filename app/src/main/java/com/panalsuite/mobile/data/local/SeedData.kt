@@ -47,7 +47,7 @@ object SeedData {
             ),
             UserEntity(
                 id = 4,
-                fullName = "Valentina Soto" ,
+                fullName = "Valentina Soto",
                 email = "valentina.soto@panalsuite.test",
                 passwordHash = passwordHash,
                 role = Role.RESOLVER,
@@ -164,6 +164,7 @@ object SeedData {
             updatedAt = now - 5 * DAY_MS
         )
     )
+
     fun comments(now: Long): List<CommentEntity> = listOf(
         CommentEntity(
             ticketId = 1,
