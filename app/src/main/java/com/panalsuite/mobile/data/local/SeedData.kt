@@ -9,8 +9,6 @@ import com.panalsuite.mobile.domain.model.Role
 import com.panalsuite.mobile.domain.model.TicketCategory
 import com.panalsuite.mobile.domain.model.TicketStatus
 import com.panalsuite.mobile.util.PasswordHasher
-
-
 object SeedData {
     private const val DEMO_PASSWORD = "Demo1234"
     private const val HOUR_MS = 60L * 60 * 1000
