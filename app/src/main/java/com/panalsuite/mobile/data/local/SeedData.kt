@@ -19,46 +19,47 @@ object SeedData {
     private const val TEAM_INFRASTRUCTURE = "Infraestructura"
 
     fun users(): List<UserEntity> {
+        val passwordHash = PasswordHasher.hash(DEMO_PASSWORD)
         return listOf(
             UserEntity(
-                id = 1
-                fullName = "Camiila Rojas"
-                email = "camila.rojas@panalsuite.test"
-                passwordHash = passwordHash
-                role = Role.REQUESTER
-                team = "Tiendas"
+                id = 1,
+                fullName = "Camiila Rojas",
+                email = "camila.rojas@panalsuite.test",
+                passwordHash = passwordHash,
+                role = Role.REQUESTER,
+                team = "Tiendas",
             ),
             UserEntity(
-                id = 2
-                        fullName = "Javiera Mora"
-                        email = "javiera.mora@panalsuite.test"
-                        passwordHash = passwordHash
-                        role = Role.REQUESTER
-                        team = "Farmacia"
+                id = 2,
+                fullName = "Javiera Mora",
+                email = "javiera.mora@panalsuite.test",
+                passwordHash = passwordHash,
+                role = Role.REQUESTER,
+                team = "Farmacia"
             ),
             UserEntity(
-                id = 3
-                fullName = "Diego Fuentes"
-                email = "diego.fuentes@panalsuite.test"
-                passwordHash = passwordHash
-                role = Role.RESOLVER
+                id = 3,
+                fullName = "Diego Fuentes",
+                email = "diego.fuentes@panalsuite.test",
+                passwordHash = passwordHash,
+                role = Role.RESOLVER,
                 team = TEAM_SUPPORT
             ),
             UserEntity(
-                id = 4
-                        fullName = "Valentina Soto"
-                        email = "valentina.soto@panalsuite.test"
-                        passwordHash = passwordHash
-                        role = Role.RESOLVER
+                id = 4,
+                fullName = "Valentina Soto" ,
+                email = "valentina.soto@panalsuite.test",
+                        passwordHash = passwordHash,
+                        role = Role.RESOLVER,
                         team = TEAM_INFRASTRUCTURE
             ),
             UserEntity(
-                id = 5
-                        fullName = "Matias Pizarro"
-                        email = "matias.pizarro@panalsuite.test"
-                        passwordHash = passwordHash
-                        role = Role.SUPERVISOR
-                        team = "Operaciones"
+                id = 5,
+                fullName = "Matias Pizarro",
+                email = "matias.pizarro@panalsuite.test",
+                passwordHash = passwordHash,
+                role = Role.SUPERVISOR,
+                team = "Operaciones"
             )
         )
     }
