@@ -23,7 +23,7 @@ object SeedData {
         return listOf(
             UserEntity(
                 id = 1,
-                fullName = "Camiila Rojas",
+                fullName = "Camila Rojas",
                 email = "camila.rojas@panalsuite.test",
                 passwordHash = passwordHash,
                 role = Role.REQUESTER,
@@ -49,13 +49,13 @@ object SeedData {
                 id = 4,
                 fullName = "Valentina Soto" ,
                 email = "valentina.soto@panalsuite.test",
-                        passwordHash = passwordHash,
-                        role = Role.RESOLVER,
-                        team = TEAM_INFRASTRUCTURE
+                passwordHash = passwordHash,
+                role = Role.RESOLVER,
+                team = TEAM_INFRASTRUCTURE
             ),
             UserEntity(
                 id = 5,
-                fullName = "Matias Pizarro",
+                fullName = "Matías Pizarro",
                 email = "matias.pizarro@panalsuite.test",
                 passwordHash = passwordHash,
                 role = Role.SUPERVISOR,
