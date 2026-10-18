@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">PanalSuiteMobile</string>
+    <string name="brand_name">PanalSuite</string>
+    <string name="brand_tagline">Gestión de tickets para tu equipo</string>
+    <string name="login_title">Iniciar sesión</string>
+    <string name="login_email_label">Correo</string>
+    <string name="login_password_label">Contraseña</string>
+    <string name="login_button">Ingresar</string>
+    <string name="login_show_password">Mostrar contraseña</string>
+    <string name="login_hide_password">Ocultar contraseña</string>
+    <string name="login_demo_title">Cuentas de prueba</string>
+    <string name="login_demo_hint">Toca una cuenta para completar el formulario.</string>
+    <string name="error_invalid_credentials">Correo o contraseña incorrectos</string>
+    <string name="error_invalid_email">Ingresa un correo válido</string>
+    <string name="error_invalid_password">La contraseña es obligatoria</string>
+    <string name="home_greeting">Hola, %1$s</string>
+    <string name="home_session_note">Pantalla temporal. Tu sesión queda guardada: cierra y abre la app y seguirás dentro.</string>
+    <string name="home_logout">Cerrar sesión</string>
 </resources>
