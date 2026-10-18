@@ -10,11 +10,11 @@
     <string name="login_hide_password">Ocultar contraseña</string>
     <string name="login_demo_title">Cuentas de prueba</string>
     <string name="login_demo_hint">Toca una cuenta para completar el formulario.</string>
-    <string name="error_invalid_credentials">Correo o contraseña incorrectos</string>
-    <string name="error_invalid_email">Ingresa un correo válido</string>
-    <string name="error_invalid_password">La contraseña es obligatoria</string>
+    <string name="error_email_required">Ingresa tu correo</string>
     <string name="error_email_invalid">Ingresa un correo válido</string>
-    <string name="error_password_invalid">La contraseña es obligatoria</string>
+    <string name="error_password_required">Ingresa tu contraseña</string>
+    <string name="error_password_too_short">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="error_invalid_credentials">Correo o contraseña incorrectos</string>
     <string name="home_greeting">Hola, %1$s</string>
     <string name="home_session_note">Pantalla temporal. Tu sesión queda guardada: cierra y abre la app y seguirás dentro.</string>
     <string name="home_logout">Cerrar sesión</string>
