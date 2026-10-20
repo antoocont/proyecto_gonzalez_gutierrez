@@ -18,4 +18,19 @@
     <string name="home_greeting">Hola, %1$s</string>
     <string name="home_session_note">Pantalla temporal. Tu sesión queda guardada: cierra y abre la app y seguirás dentro.</string>
     <string name="home_logout">Cerrar sesión</string>
+
+    <string name="nav_my_tickets">Mis tickets</string>
+    <string name="nav_new_ticket">Nuevo</string>
+    <string name="nav_queue">Bandeja</string>
+    <string name="nav_summary">Resumen</string>
+    <string name="nav_all_tickets">Tickets</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_ticket_detail">Detalle del ticket</string>
+    <string name="nav_back">Volver</string>
+    <string name="ticket_detail_title">Ticket #%1$d</string>
+    <string name="placeholder_message">Esta pantalla se construye en los próximos pasos.</string>
+    <string name="placeholder_open_demo">Abrir ticket de ejemplo</string>
+    <string name="profile_email">Correo</string>
+    <string name="profile_team">Equipo</string>
+    <string name="profile_logout">Cerrar sesión</string>
 </resources>
