@@ -66,4 +66,10 @@
     <string name="error_branch_required">Ingresa la sucursal</string>
     <string name="error_branch_too_short">La sucursal debe tener al menos 3 caracteres</string>
     <string name="error_category_required">Elige una categoría</string>
+    <string name="summary_total">Total de tickets</string>
+    <string name="summary_critical">Críticos activos</string>
+    <string name="summary_by_status">Tickets por estado</string>
+    <string name="summary_by_priority">Por prioridad</string>
+    <string name="summary_workload">Carga del equipo</string>
+    <string name="summary_active_count">%1$d activos</string>
 </resources>
