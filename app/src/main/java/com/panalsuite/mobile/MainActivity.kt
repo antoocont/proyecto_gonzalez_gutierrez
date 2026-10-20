@@ -22,7 +22,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge(statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT))
-        val authRepository = (application as PanalSuiteApp).container.authRepository
+        val container = (application as PanalSuiteApp).container
+        val authRepository = container.authRepository
 
         setContent {
             PanalSuiteMobileTheme {
