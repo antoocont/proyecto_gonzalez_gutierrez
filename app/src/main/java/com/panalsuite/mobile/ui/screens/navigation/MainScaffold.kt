@@ -40,6 +40,8 @@ import com.panalsuite.mobile.R
 import com.panalsuite.mobile.data.local.entity.UserEntity
 import com.panalsuite.mobile.data.repository.TicketRepository
 import com.panalsuite.mobile.ui.screens.common.PlaceholderScreen
+import com.panalsuite.mobile.ui.screens.create.CreateTicketScreen
+import com.panalsuite.mobile.ui.screens.create.CreateTicketViewModel
 import com.panalsuite.mobile.ui.screens.profile.ProfileScreen
 import com.panalsuite.mobile.ui.screens.tickets.TicketDetailScreen
 import com.panalsuite.mobile.ui.screens.tickets.TicketDetailViewModel
@@ -146,6 +148,17 @@ fun MainScaffold(
                             TicketListScreen(
                                 viewModel = listViewModel,
                                 onTicketClick = { ticketId ->
+                                    navController.navigate(Routes.ticketDetail(ticketId))
+                                }
+                            )
+                        }
+                        AppDestination.NEW_TICKET -> {
+                            val createViewModel: CreateTicketViewModel = viewModel(
+                                factory = CreateTicketViewModel.factory(ticketRepository, user)
+                            )
+                            CreateTicketScreen(
+                                viewModel = createViewModel,
+                                onCreated = { ticketId ->
                                     navController.navigate(Routes.ticketDetail(ticketId))
                                 }
                             )
