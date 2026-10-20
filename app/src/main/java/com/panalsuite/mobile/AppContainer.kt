@@ -5,6 +5,7 @@ import com.panalsuite.mobile.data.local.DatabaseSeeder
 import com.panalsuite.mobile.data.local.PanalSuiteDatabase
 import com.panalsuite.mobile.data.local.SessionManager
 import com.panalsuite.mobile.data.repository.AuthRepository
+import com.panalsuite.mobile.data.repository.TicketRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -23,4 +24,6 @@ class AppContainer(context: Context) {
         sessionManager = sessionManager,
         awaitDatabaseReady = { seedJob.await() }
     )
+
+    val ticketRepository = TicketRepository(database)
 }

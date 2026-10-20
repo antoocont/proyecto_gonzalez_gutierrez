@@ -34,4 +34,8 @@ interface TicketDao {
 
     @Query("SELECT status, COUNT(*) AS total FROM tickets GROUP BY status")
     fun observeStatusCounts(): Flow<List<StatusCount>>
+
+
+    @Query("SELECT * FROM tickets WHERE id = :ticketId")
+    suspend fun findById(ticketId: Long): TicketEntity?
 }
