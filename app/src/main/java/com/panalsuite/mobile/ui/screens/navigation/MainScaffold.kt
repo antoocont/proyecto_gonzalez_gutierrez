@@ -39,10 +39,11 @@ import androidx.navigation.navArgument
 import com.panalsuite.mobile.R
 import com.panalsuite.mobile.data.local.entity.UserEntity
 import com.panalsuite.mobile.data.repository.TicketRepository
-import com.panalsuite.mobile.ui.screens.common.PlaceholderScreen
 import com.panalsuite.mobile.ui.screens.create.CreateTicketScreen
 import com.panalsuite.mobile.ui.screens.create.CreateTicketViewModel
 import com.panalsuite.mobile.ui.screens.profile.ProfileScreen
+import com.panalsuite.mobile.ui.screens.summary.SummaryScreen
+import com.panalsuite.mobile.ui.screens.summary.SummaryViewModel
 import com.panalsuite.mobile.ui.screens.tickets.TicketDetailScreen
 import com.panalsuite.mobile.ui.screens.tickets.TicketDetailViewModel
 import com.panalsuite.mobile.ui.screens.tickets.TicketListScreen
@@ -163,10 +164,12 @@ fun MainScaffold(
                                 }
                             )
                         }
-                        else -> PlaceholderScreen(
-                            title = stringResource(tab.labelRes),
-                            message = stringResource(R.string.placeholder_message)
-                        )
+                        AppDestination.SUMMARY -> {
+                            val summaryViewModel: SummaryViewModel = viewModel(
+                                factory = SummaryViewModel.factory(ticketRepository, user)
+                            )
+                            SummaryScreen(viewModel = summaryViewModel)
+                        }
                     }
                 }
             }
