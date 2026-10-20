@@ -15,9 +15,7 @@
     <string name="error_password_required">Ingresa tu contraseña</string>
     <string name="error_password_too_short">La contraseña debe tener al menos 8 caracteres</string>
     <string name="error_invalid_credentials">Correo o contraseña incorrectos</string>
-    <string name="home_greeting">Hola, %1$s</string>
-    <string name="home_session_note">Pantalla temporal. Tu sesión queda guardada: cierra y abre la app y seguirás dentro.</string>
-    <string name="home_logout">Cerrar sesión</string>
+
 
     <string name="nav_my_tickets">Mis tickets</string>
     <string name="nav_new_ticket">Nuevo</string>
