@@ -51,4 +51,19 @@
     <string name="comment_send">Enviar comentario</string>
     <string name="error_comment_required">Escribe un comentario</string>
     <string name="error_comment_too_long">El comentario no puede superar los 300 caracteres</string>
+    <string name="create_title_label">Título</string>
+    <string name="create_description_label">Descripción</string>
+    <string name="create_priority_label">Prioridad</string>
+    <string name="create_counter">%1$d/%2$d</string>
+    <string name="create_submit">Crear ticket</string>
+    <string name="create_saving">Guardando…</string>
+    <string name="error_title_required">Ingresa un título</string>
+    <string name="error_title_too_short">El título debe tener al menos 5 caracteres</string>
+    <string name="error_title_too_long">El título no puede superar los 80 caracteres</string>
+    <string name="error_description_required">Describe el problema</string>
+    <string name="error_description_too_short">La descripción debe tener al menos 10 caracteres</string>
+    <string name="error_description_too_long">La descripción no puede superar los 500 caracteres</string>
+    <string name="error_branch_required">Ingresa la sucursal</string>
+    <string name="error_branch_too_short">La sucursal debe tener al menos 3 caracteres</string>
+    <string name="error_category_required">Elige una categoría</string>
 </resources>
