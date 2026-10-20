@@ -12,7 +12,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.panalsuite.mobile.ui.MainViewModel
 import com.panalsuite.mobile.ui.SessionState
 import com.panalsuite.mobile.ui.components.LoadingScreen
-import com.panalsuite.mobile.ui.screens.home.HomePlaceholderScreen
+import com.panalsuite.mobile.ui.navigation.MainScaffold
 import com.panalsuite.mobile.ui.screens.login.LoginScreen
 import com.panalsuite.mobile.ui.screens.login.LoginViewModel
 import com.panalsuite.mobile.ui.theme.PanalSuiteMobileTheme
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                         )
                         LoginScreen(viewModel = loginViewModel)
                     }
-                    is SessionState.LoggedIn -> HomePlaceholderScreen(
+                    is SessionState.LoggedIn -> MainScaffold(
                         user = state.user,
                         onLogout = mainViewModel::logout
                     )
