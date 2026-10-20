@@ -104,4 +104,35 @@ class TicketRepository(private val database: PanalSuiteDatabase) {
         )
         ticketDao.update(ticket.copy(updatedAt = now))
     }
+
+    suspend fun createTicket(requester: UserEntity, draft: NewTicket): Long =
+        database.withTransaction { insertTicket(requester, draft) }
+
+    private suspend fun insertTicket(requester: UserEntity, draft: NewTicket): Long {
+        val now = System.currentTimeMillis()
+        val ticketId = ticketDao.insert(
+            TicketEntity(
+                title = draft.title.trim(),
+                description = draft.description.trim(),
+                category = draft.category,
+                priority = draft.priority,
+                status = TicketStatus.OPEN,
+                branch = draft.branch.trim(),
+                requesterId = requester.id,
+                assigneeId = null,
+                team = draft.team,
+                createdAt = now,
+                updatedAt = now
+            )
+        )
+        historyDao.insert(
+            TicketHistoryEntity(
+                ticketId = ticketId,
+                authorId = requester.id,
+                description = "Ticket creado",
+                createdAt = now
+            )
+        )
+        return ticketId
+    }
 }
