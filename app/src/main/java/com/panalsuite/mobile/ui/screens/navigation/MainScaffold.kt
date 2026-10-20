@@ -28,6 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -37,16 +38,20 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.panalsuite.mobile.R
 import com.panalsuite.mobile.data.local.entity.UserEntity
+import com.panalsuite.mobile.data.repository.TicketRepository
 import com.panalsuite.mobile.ui.screens.common.PlaceholderScreen
 import com.panalsuite.mobile.ui.screens.profile.ProfileScreen
+import com.panalsuite.mobile.ui.screens.tickets.TicketDetailScreen
+import com.panalsuite.mobile.ui.screens.tickets.TicketDetailViewModel
+import com.panalsuite.mobile.ui.screens.tickets.TicketListScreen
+import com.panalsuite.mobile.ui.screens.tickets.TicketListViewModel
 import com.panalsuite.mobile.ui.theme.Navy
-
-private const val DEMO_TICKET_ID = 1L
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScaffold(
     user: UserEntity,
+    ticketRepository: TicketRepository,
     onLogout: () -> Unit
 ) {
     val navController = rememberNavController()
@@ -130,14 +135,24 @@ fun MainScaffold(
         ) {
             tabs.forEach { tab ->
                 composable(tab.route) {
-                    if (tab == AppDestination.PROFILE) {
-                        ProfileScreen(user = user, onLogout = onLogout)
-                    } else {
-                        PlaceholderScreen(
+                    when (tab) {
+                        AppDestination.PROFILE -> ProfileScreen(user = user, onLogout = onLogout)
+                        AppDestination.MY_TICKETS,
+                        AppDestination.QUEUE,
+                        AppDestination.ALL_TICKETS -> {
+                            val listViewModel: TicketListViewModel = viewModel(
+                                factory = TicketListViewModel.factory(ticketRepository, user)
+                            )
+                            TicketListScreen(
+                                viewModel = listViewModel,
+                                onTicketClick = { ticketId ->
+                                    navController.navigate(Routes.ticketDetail(ticketId))
+                                }
+                            )
+                        }
+                        else -> PlaceholderScreen(
                             title = stringResource(tab.labelRes),
-                            message = stringResource(R.string.placeholder_message),
-                            actionLabel = stringResource(R.string.placeholder_open_demo),
-                            onAction = { navController.navigate(Routes.ticketDetail(DEMO_TICKET_ID)) }
+                            message = stringResource(R.string.placeholder_message)
                         )
                     }
                 }
@@ -147,10 +162,10 @@ fun MainScaffold(
                 arguments = listOf(navArgument(Routes.TICKET_ID_ARG) { type = NavType.LongType })
             ) { entry ->
                 val ticketId = entry.arguments?.getLong(Routes.TICKET_ID_ARG) ?: 0L
-                PlaceholderScreen(
-                    title = stringResource(R.string.ticket_detail_title, ticketId),
-                    message = stringResource(R.string.placeholder_message)
+                val detailViewModel: TicketDetailViewModel = viewModel(
+                    factory = TicketDetailViewModel.factory(ticketRepository, user, ticketId)
                 )
+                TicketDetailScreen(viewModel = detailViewModel)
             }
         }
     }

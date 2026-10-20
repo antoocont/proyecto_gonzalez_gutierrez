@@ -41,6 +41,7 @@ class MainActivity : ComponentActivity() {
                     }
                     is SessionState.LoggedIn -> MainScaffold(
                         user = state.user,
+                        ticketRepository = container.ticketRepository,
                         onLogout = mainViewModel::logout
                     )
                 }
